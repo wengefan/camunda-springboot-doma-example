@@ -14,7 +14,7 @@ import com.example.ReservationDao;
 
 //@Component
 public class ExpenseRecorder implements JavaDelegate {
-    private final Logger LOGGER = Logger.getLogger(ExpenseRecorder2.class.getName());
+    private final Logger LOGGER = Logger.getLogger(ExpenseRecorder.class.getName());
 
     @Autowired
 	private ReservationDao dao;
