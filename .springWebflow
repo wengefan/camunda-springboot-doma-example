@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webflow-project-description>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.2.201712210913-RELEASE]]></pluginVersion>
+	<configs>
+		<config>
+			<file>src/main/resources/applicationContext.xml</file>
+			<name><![CDATA[applicationContext]]></name>
+			<beans-config><![CDATA[1:BeansModel|2:SBDemo|3:java:com.example.SbDemoApplication]]></beans-config>
+		</config>
+	</configs>
+</webflow-project-description>
