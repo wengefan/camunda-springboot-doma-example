@@ -11,8 +11,9 @@ import com.example.AppConfig;
 import com.example.Category;
 import com.example.Reservation;
 import com.example.ReservationDao;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class ExpenseRecorder implements JavaDelegate {
     private final Logger LOGGER = Logger.getLogger(ExpenseRecorder.class.getName());
 
@@ -21,14 +22,14 @@ public class ExpenseRecorder implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
-    	//dao = SbDemoApplication.getInstance().reservationDao;
-
-
         LOGGER.info("内容: " + execution.getVariable("detail"));
         LOGGER.info("金額（円）: " + execution.getVariable("amount"));
         LOGGER.info("経費種別: " + Category.valueOf((String)execution.getVariable("expenseCategory")));
         LOGGER.info("承認済み？: " + (((Boolean)execution.getVariable("approved")).booleanValue() ? "はい" : "いいえ"));
         Reservation data = new Reservation();
+        data.id = 1;
+        data.name = "My First Expense!";
+        data.details = (String)execution.getVariable("detail");
         data.amount = (Double)execution.getVariable("amount");
         data.approved = (Boolean)execution.getVariable("approved");
         data.expenseCategory =(String)execution.getVariable("expenseCategory");
