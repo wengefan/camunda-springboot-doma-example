@@ -16,11 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Dao(config = AppConfig.class)
 @ConfigAutowireable
-@Configuration
-@AnnotateWith(annotations = {
-	    @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = javax.inject.Inject.class),
-	    @Annotation(target = AnnotationTarget.CONSTRUCTOR_PARAMETER, type = javax.inject.Named.class, elements = "\"config\"") })
-@ComponentScan
 public interface ReservationDao {
     @Select
     @Bean
